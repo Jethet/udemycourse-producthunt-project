@@ -4,4 +4,4 @@ from .models import Product
 
 def home(request):
     product = Product.objects
-    return render(request, 'product/home.html, {'product':product})
+    return render(request, 'product/home.html', {'product':product})
