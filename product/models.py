@@ -1,4 +1,4 @@
-rom django.db import models
+from django.db import models
 
 # generally speaking, you will have one model per app
 # Django documentation has info on model field types to choose from
