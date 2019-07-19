@@ -2,25 +2,30 @@
 
 {% block content %}
 
+{% if error %}
+{{ error }}
+<br>
+<br>
+{% endif %}
+
 <h1>Sign up!</h1>
 
-<form class="" action="{% url 'signup' %}" method="post">
+<form method="POST" action="{% url 'signup' %}">
   {% csrf_token %}
   Username:
   <br>
-  <input type="text" name="username" value="">
+  <input type="text" name="username">
   <br>
   Password:
   <br>
-  <input type="password" name="password1" value="">
+  <input type="password" name="password1">
   <br>
   Confirm password:
   <br>
-  <input type="password" name="password2" value="">
+  <input type="password" name="password2">
   <br>
   <br>
-  <button type="button" class="btn btn-secondary">Sign up!</button>
-
+  <input class="btn btn-primary" type="submit" value="Sign up!"/>
   <br>
 </form>
 
