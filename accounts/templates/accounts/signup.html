@@ -2,6 +2,26 @@
 
 {% block content %}
 
-Sign up!
+<h1>Sign up!</h1>
+
+<form class="" action="{% url 'signup' %}" method="post">
+  {% csrf_token %}
+  Username:
+  <br>
+  <input type="text" name="username" value="">
+  <br>
+  Password:
+  <br>
+  <input type="password" name="password1" value="">
+  <br>
+  Confirm password:
+  <br>
+  <input type="password" name="password2" value="">
+  <br>
+  <br>
+  <button type="button" class="btn btn-secondary">Sign up!</button>
+
+  <br>
+</form>
 
 {% endblock %}
