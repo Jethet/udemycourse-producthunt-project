@@ -17,9 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-import product.views
+from product.views import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', product.views.home, name='home'),
+    path('', views.home, name='home'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
