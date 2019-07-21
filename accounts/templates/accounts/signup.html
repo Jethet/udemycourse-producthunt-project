@@ -3,34 +3,41 @@
 {% block content %}
 
 {% if error %}
-{{ error }}
+<input class="btn btn-danger" type="button" value="{{ error }}"/>
 <br>
 <br>
 {% endif %}
 
+<br>
 <h1>Sign up!</h1>
-
+<br>
+<br>
 <form method="POST" action="{% url 'signup' %}">
   {% csrf_token %}
   First name:
   <br>
   <input type="text" name="firstname">
   <br>
+  <br>
   Last name:
   <br>
   <input type="text" name="lastname">
+  <br>
   <br>
   Username:
   <br>
   <input type="text" name="username">
   <br>
+  <br>
   Password:
   <br>
   <input type="password" name="password1">
   <br>
+  <br>
   Confirm password:
   <br>
   <input type="password" name="password2">
+  <br>
   <br>
   <br>
   <input class="btn btn-primary" type="submit" value="Sign up!"/>
