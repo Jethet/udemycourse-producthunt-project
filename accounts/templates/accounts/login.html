@@ -2,6 +2,33 @@
 
 {% block content %}
 
-Log in!
+{% if error %}
+<input class="btn btn-danger" type="button" value="{{ error }}"/>
+<br>
+<br>
+{% endif %}
+
+<br>
+<h1>Login</h1>
+<br>
+<br>
+<form method="POST" action="{% url 'login' %}">
+  {% csrf_token %}
+  Username:
+  <br>
+  <input type="text" name="username">
+  <br>
+  <br>
+  Password:
+  <br>
+  <input type="password" name="password">
+  <br>
+  <br>
+
+  <br>
+  <br>
+  <input class="btn btn-primary" type="submit" value="Login"/>
+  <br>
+</form>
 
 {% endblock %}
