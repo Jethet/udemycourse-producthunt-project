@@ -11,7 +11,7 @@ class Product(models.Model):
     pub_date = models.DateTimeField(default=datetime.date.today)
     votes_total = models.IntegerField(default=1)
     image = models.ImageField(upload_to='images/')
-    icon = models.ImageField(upload_to='images/')
+    icon = models.ImageField(upload_to='images/'0)
     body = models.CharField(max_length=400)
     hunter = models.ForeignKey(User, on_delete=models.CASCADE)
 
