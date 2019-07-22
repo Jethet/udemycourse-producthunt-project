@@ -10,7 +10,7 @@ def signup(request):
                 user = User.objects.get(username=request.POST['username'])
                 return render(request, 'accounts/signup.html', {'error':'Username has already been taken'})
             except User.DoesNotExist:
-                user = User.objects.create_user(request.POST['username'], password=request.POST['password1'], firstname=request.POST['firstname'], lastname=request.POST['lastname'])
+                user = User.objects.create_user(request.POST['username'], password=request.POST['password1'])
                 auth.login(request,user)
                 return redirect('home')
         else:
@@ -33,4 +33,3 @@ def logout(request):
     if request.method == 'POST':
         auth.logout(request)
         return redirect('home')
-    
