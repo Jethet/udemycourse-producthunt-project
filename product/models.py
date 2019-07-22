@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 class Product(models.Model):
     title = models.CharField(max_length=255)
-    body = models.CharField()
+    body = models.CharField(max_length=3000)
     url = models.TextField(max_length=900)
     pub_date = models.DateTimeField()
     votes_total = models.IntegerField(default=1)
