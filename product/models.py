@@ -6,8 +6,8 @@ from django.contrib.auth.models import User
 # Django documentation has info on model field types to choose from
 
 class Product(models.Model):
-    title = models.CharField(max_length=255)
-    body = models.CharField(max_length=3000)
+    title = models.CharField(max_length=500)
+    body = models.TextField(max_length=3000)
     url = models.TextField(max_length=900)
     pub_date = models.DateTimeField()
     votes_total = models.IntegerField(default=1)
