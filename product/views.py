@@ -22,7 +22,7 @@ def create(request):
             product.pub_date = timezone.datetime.now()
             product.hunter = request.user
             product.save()    #This inserts the view into the database
-            return redirect('home')
+            return redirect('/product/' + str(product.id))
         else:
             return render(request, 'product/create.html', {'error':'All fields are required.'})
     else:
@@ -30,5 +30,4 @@ def create(request):
 
 def detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
-
-    return render(request, 'product/detail.html', {'product':product.object})
+    return render(request, 'product/detail.html', {'product':product})
