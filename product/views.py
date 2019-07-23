@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Product
 from django.utils import timezone
@@ -27,3 +27,8 @@ def create(request):
             return render(request, 'product/create.html', {'error':'All fields are required.'})
     else:
         return render(request, 'product/create.html')
+
+def detail(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+
+    return render(request, 'product/detail.html', {'product':product.object})
