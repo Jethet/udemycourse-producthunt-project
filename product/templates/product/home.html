@@ -4,11 +4,11 @@
 
 {% for product in product.all %}
 <div class="row pt-3">
-  <div class="col-2" onclick="window.location='{% url 'detail' product.id %}';" style="">
+  <div class="col-2" onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer;">
     <img src="{{ product.image.url }}" alt="Product image" class="img-fluid">
   </div>
-  <div class="col-6">
-    <h1>{{ product.title }}</h1></a>
+  <div class="col-6" onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer;">
+    <h1>{{ product.title }}</h1>
     <p>{{ product.summary }}</p>
   </div>
   <div class="col-4">
