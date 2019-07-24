@@ -16,10 +16,10 @@
       <img src="{{ product.image.url }}" alt="Product image" class="img-fluid">
     </div>
     <div class="col-4">
-      <a href="#"><button class="btn btn-primary btn-lg btn-block"><i class="fas fa-caret-up"></i> Upvote {{ product.votes_total }}</button></a>
+      <a href="javascript:{document.getElementById('upvote').submit()}"><button class="btn btn-primary btn-lg btn-block"><i class="fas fa-caret-up"></i> Upvote {{ product.votes_total }}</button></a>
     </div>
   </div>
-  <div class="row">
+  <div class="row pt-2">
     <div class="col-4">
       <h4>Hunted by {{ product.hunter.username }}</h4>
     </div>
