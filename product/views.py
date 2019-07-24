@@ -33,6 +33,7 @@ def detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     return render(request, 'product/detail.html', {'product':product})
 
+@login_required
 def upvote(request, product_id):
     if request.method == 'POST':
         product = get_object_or_404(Product, pk=product_id)
